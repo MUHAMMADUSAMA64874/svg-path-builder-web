@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SVG Path Builder - Web Version</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>SVG Path Builder</h1>
+            <p class="subtitle">Create and edit SVG paths with text animation</p>
+        </header>
+
+        <div class="main-content">
+            <div class="canvas-container">
+                <canvas id="drawing-canvas" width="800" height="600"></canvas>
+                <div class="canvas-controls">
+                    <button id="clear-canvas"><i class="fas fa-trash"></i> Clear</button>
+                    <button id="fit-to-canvas"><i class="fas fa-expand"></i> Fit to Canvas</button>
+                </div>
+            </div>
+
+            <div class="control-panel">
+                <div class="control-section">
+                    <h2>Mode</h2>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="mode" value="add_points" checked>
+                            <i class="fas fa-plus-circle"></i> Add Points
+                        </label>
+                        <label>
+                            <input type="radio" name="mode" value="edit_points">
+                            <i class="fas fa-edit"></i> Edit Points
+                        </label>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h2>Path Controls</h2>
+                    <div class="form-group">
+                        <label for="path-data">Path Data:</label>
+                        <textarea id="path-data" rows="3"></textarea>
+                    </div>
+                    <div class="button-group">
+                        <button id="load-path"><i class="fas fa-code"></i> Load Path</button>
+                        <button id="sample-path"><i class="fas fa-magic"></i> Sample Path</button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h2>Text Properties</h2>
+                    <div class="form-group">
+                        <label for="text-content">Text Content:</label>
+                        <input type="text" id="text-content" value="Your text here">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="font-size">Font Size:</label>
+                            <input type="number" id="font-size" value="36" min="8" max="72">
+                        </div>
+                        <div class="form-group">
+                            <label for="text-color">Text Color:</label>
+                            <input type="color" id="text-color" value="#000000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="letter-spacing">Letter Spacing: <span id="spacing-value">0</span>px</label>
+                        <input type="range" id="letter-spacing" min="-20" max="50" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="start-offset">Start Offset: <span id="offset-value">0</span>%</label>
+                        <input type="range" id="start-offset" min="0" max="100" value="0">
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h2>Animation</h2>
+                    <div class="form-group">
+                        <label for="duration">Duration (seconds):</label>
+                        <input type="number" id="duration" value="10" min="1" max="60">
+                    </div>
+                    <button id="toggle-animation"><i class="fas fa-play"></i> Preview Animation</button>
+                </div>
+
+                <div class="control-section">
+                    <h2>Export/Import</h2>
+                    <div class="button-group">
+                        <button id="save-svg"><i class="fas fa-save"></i> Save SVG</button>
+                        <button id="load-svg"><i class="fas fa-folder-open"></i> Load SVG</button>
+                        <button id="copy-svg"><i class="fas fa-copy"></i> Copy SVG</button>
+                    </div>
+                    <div class="button-group">
+                        <button id="load-image"><i class="fas fa-image"></i> Load Image</button>
+                    </div>
+                </div>
+
+                <div class="control-section">
+                    <h2>SVG Code</h2>
+                    <textarea id="svg-code" readonly rows="10"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-bar" id="status-bar"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
