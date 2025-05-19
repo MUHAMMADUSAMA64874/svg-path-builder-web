@@ -56,7 +56,7 @@ python svg_path_builder.py
   - Undo (Ctrl+Z), redo (Ctrl+Y), save (Ctrl+S).
 - **Scroll:** Mouse wheel (vertical), Shift + mouse wheel (horizontal).
 
-Or use the online version: [Live Demo](https://your-live-demo-link).
+Or use the online version: [Live Demo](https://378f265b-daba-45b5-ba5c-06982d414c07-00-a4nk31ax7h2l.spock.replit.dev/).
 
 ## Repository Structure
 
@@ -84,4 +84,3 @@ MIT License. See LICENSE for details.
 Star the repo if you find it useful, and share your feedback!
 ```
 
-Make sure to replace the placeholder link for the live demo and your GitHub username as needed!
